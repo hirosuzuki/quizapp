@@ -1,0 +1,30 @@
+// https://hub.docker.com/_/microsoft-devcontainers
+{
+    "name": "quizapp",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:0-18-bullseye",
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers-contrib/features/firebase-cli:2": {},
+        "ghcr.io/dhoeric/features/google-cloud-cli:1": {}
+    },
+    "forwardPorts": [
+        5173
+    ],
+    "portsAttributes": {
+        "5173": {
+            "label": "webapp",
+            "protocol": "http"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "esbenp.prettier-vscode",
+                "mhutchie.git-graph",
+                "ms-azuretools.vscode-docker",
+            ],
+            "settings": {}
+        }
+    }
+}
